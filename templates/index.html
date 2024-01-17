@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IPC Prediction</title>
+</head>
+<body>
+    <h1>IPC Prediction</h1>
+    <form method="POST">
+        <label for="offence">Enter Offence:</label>
+        <input type="text" id="offence" name="offence" required>
+        <button type="submit">Predict IPC</button>
+    </form>
+
+    <!-- Display the result if available -->
+    {% if result %}
+    <h2>Result</h2>
+    <ul>
+        {% for item in result %}
+        <li>
+            <strong>Code:</strong> {{ item.code }}<br>
+            <strong>Detail:</strong> {{ item.detail }}<br>
+            <strong>Punishment:</strong> {{ item.punishment }}<br>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
